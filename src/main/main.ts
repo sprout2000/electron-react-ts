@@ -3,7 +3,6 @@ import path from 'path';
 
 import { BrowserWindow, app, session, ipcMain, dialog } from 'electron';
 import { searchDevtools } from 'electron-search-devtools';
-
 import isDev from 'electron-is-dev';
 
 if (isDev) {
