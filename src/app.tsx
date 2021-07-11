@@ -20,11 +20,15 @@ const App = () => {
       <button onClick={onClick} className="open-button">
         Open
       </button>
-      <ul>
-        {filelist.map((item, index) => (
-          <li key={index}>{item}</li>
-        ))}
-      </ul>
+      <div>
+        <ul>
+          {filelist.map((item, index) => (
+            <li className="list" key={index}>
+              {item}
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };
