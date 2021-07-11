@@ -24,7 +24,7 @@ if (isDev) {
 
 const createWindow = () => {
   const mainWindow = new BrowserWindow({
-    width: 800,
+    width: 600,
     height: 400,
     show: false,
     title: 'Electron',
