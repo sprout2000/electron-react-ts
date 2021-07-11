@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 
 import { BrowserWindow, app, session, ipcMain, dialog } from 'electron';
-import { searchDevtools } from './searchDevtools';
+import { searchDevtools } from 'electron-search-devtools';
 
 import isDev from 'electron-is-dev';
 
@@ -24,9 +24,10 @@ if (isDev) {
 
 const createWindow = () => {
   const mainWindow = new BrowserWindow({
-    width: 600,
+    width: 800,
     height: 400,
     show: false,
+    title: 'Electron',
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
     },
