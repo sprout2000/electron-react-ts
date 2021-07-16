@@ -5,17 +5,15 @@ import { BrowserWindow, app, session, ipcMain, dialog } from 'electron';
 import { searchDevtools } from 'electron-search-devtools';
 import isDev from 'electron-is-dev';
 
+const execPath =
+  process.platform === 'win32'
+    ? '../node_modules/electron/dist/electron.exe'
+    : '../node_modules/.bin/electron';
+
 if (isDev) {
   // eslint-disable-next-line @typescript-eslint/no-var-requires
   require('electron-reload')(__dirname, {
-    // eslint-disable-next-line @typescript-eslint/no-var-requires
-    electron: require('path').join(
-      __dirname,
-      '..',
-      'node_modules',
-      '.bin',
-      'electron'
-    ),
+    electron: path.resolve(__dirname, execPath),
     forceHardReset: true,
     hardResetMethod: 'exit',
   });
