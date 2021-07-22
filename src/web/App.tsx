@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
-import ReactDOM from 'react-dom';
 
-import './app.scss';
+import './App.scss';
 
 const { myAPI } = window;
 
-const App = () => {
+export const App = (): JSX.Element => {
   const [filelist, setFilelist] = useState<string[]>([]);
 
   const onClick = async () => {
@@ -32,5 +31,3 @@ const App = () => {
     </div>
   );
 };
-
-ReactDOM.render(<App />, document.getElementById('root'));
