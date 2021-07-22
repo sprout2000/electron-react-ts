@@ -1,5 +1,6 @@
 {
   "name": "electron-react-ts",
+  "description": "A boilerplate for Electron, React, and TypeScript projects with hot reload capabilities.",
   "version": "0.2.0",
   "license": "MIT",
   "main": "dist/main.js",
