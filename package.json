@@ -15,7 +15,14 @@
     "clean": "rimraf dist release",
     "build:prod": "webpack --config webpack.config.prod.ts --progress",
     "build:pack": "ts-node ./scripts/build.ts",
-    "package": "run-s clean build:prod build:pack"
+    "package": "run-s clean build:prod build:pack",
+    "lint": "run-s lint:*",
+    "lint:eslint": "eslint . --ext .ts,.tsx --fix",
+    "lint:prettier": "prettier --write .",
+    "prepare": "simple-git-hooks"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "yarn lint"
   },
   "dependencies": {
     "react": "^17.0.2",
@@ -38,6 +45,7 @@
     "rimraf": "^3.0.2",
     "sass": "^1.35.2",
     "sass-loader": "^12.1.0",
+    "simple-git-hooks": "^2.5.1",
     "ts-loader": "^9.2.3",
     "ts-node": "^10.1.0",
     "typescript": "^4.3.5",
