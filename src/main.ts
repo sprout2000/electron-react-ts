@@ -3,8 +3,10 @@ import path from 'path';
 
 import { BrowserWindow, app, session, ipcMain, dialog } from 'electron';
 import { searchDevtools } from 'electron-search-devtools';
-import isDev from 'electron-is-dev';
 
+const isDev = process.env.NODE_ENV === 'development';
+
+/// #if DEBUG
 const execPath =
   process.platform === 'win32'
     ? '../node_modules/electron/dist/electron.exe'
@@ -18,6 +20,7 @@ if (isDev) {
     hardResetMethod: 'exit',
   });
 }
+/// #endif
 
 const createWindow = () => {
   const mainWindow = new BrowserWindow({
