@@ -1,6 +1,6 @@
 # electron-react-ts
 
-A boilerplate for [Electron](https://www.electronjs.org/), [React](https://reactjs.org/) and [TypeScript](https://www.typescriptlang.org/).
+A boilerplate for [Electron](https://www.electronjs.org/), [React](https://reactjs.org/) and [TypeScript](https://www.typescriptlang.org/) projects with hot reload capabilities.
 
 ## Usage
 
