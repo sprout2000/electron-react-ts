@@ -5,7 +5,7 @@
   "license": "MIT",
   "main": "dist/main.js",
   "scripts": {
-    "start": "run-s clean build:prod serve",
+    "start": "run-s clean build serve",
     "predev": "rimraf dist",
     "dev": "run-p dev:*",
     "dev:electron": "wait-on ./dist/index.html && cross-env NODE_ENV=\"development\" electron .",
@@ -13,9 +13,9 @@
     "dev:webpack": "webpack --watch",
     "serve": "electron .",
     "clean": "rimraf dist release",
-    "build:prod": "webpack --config webpack.config.prod.ts --progress",
+    "build": "webpack --config webpack.config.prod.ts --progress",
     "build:pack": "ts-node ./scripts/build.ts",
-    "package": "run-s clean build:prod build:pack",
+    "package": "run-s clean build build:pack",
     "lint": "run-s lint:*",
     "lint:eslint": "eslint . --ext .ts,.tsx --fix",
     "lint:prettier": "prettier --write ."
