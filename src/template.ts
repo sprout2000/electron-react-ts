@@ -41,6 +41,32 @@ const editSub: MenuItemConstructorOptions['submenu'] = [
   },
 ];
 
+if (isDarwin) {
+  editSub.splice(6, 0, {
+    label: 'Paste and Match Style',
+    role: 'pasteAndMatchStyle',
+    accelerator: 'Cmd+Option+Shift+V',
+  });
+  editSub.push(
+    { type: 'separator' },
+    {
+      label: 'Speech',
+      submenu: [
+        {
+          label: 'Start Speaking',
+          role: 'startSpeaking',
+        },
+        {
+          label: 'Stop Speaking',
+          role: 'stopSpeaking',
+        },
+      ],
+    }
+  );
+} else {
+  editSub.splice(8, 0, { type: 'separator' });
+}
+
 const windowSub: MenuItemConstructorOptions['submenu'] = [
   {
     label: 'Minimize',
@@ -68,32 +94,6 @@ if (isDarwin) {
     { type: 'separator' },
     { role: 'window' }
   );
-}
-
-if (isDarwin) {
-  editSub.splice(6, 0, {
-    label: 'Paste and Match Style',
-    role: 'pasteAndMatchStyle',
-    accelerator: 'Cmd+Option+Shift+V',
-  });
-  editSub.push(
-    { type: 'separator' },
-    {
-      label: 'Speech',
-      submenu: [
-        {
-          label: 'Start Speaking',
-          role: 'startSpeaking',
-        },
-        {
-          label: 'Stop Speaking',
-          role: 'stopSpeaking',
-        },
-      ],
-    }
-  );
-} else {
-  editSub.splice(8, 0, { type: 'separator' });
 }
 
 export const template: MenuItemConstructorOptions[] = [
@@ -192,7 +192,7 @@ export const template: MenuItemConstructorOptions[] = [
   },
 ];
 
-if (process.platform === 'darwin')
+if (process.platform === 'darwin') {
   template.unshift({
     label: 'Electron',
     submenu: [
@@ -225,3 +225,4 @@ if (process.platform === 'darwin')
       },
     ],
   });
+}
