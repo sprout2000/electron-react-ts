@@ -1,8 +1,9 @@
 import fs from 'fs';
 import path from 'path';
-
-import { BrowserWindow, app, session, ipcMain, dialog } from 'electron';
+import { BrowserWindow, Menu, app, session, ipcMain, dialog } from 'electron';
 import { searchDevtools } from 'electron-search-devtools';
+
+import { createMenu } from './menu';
 
 const isDev = process.env.NODE_ENV === 'development';
 
@@ -33,6 +34,9 @@ const createWindow = () => {
     },
   });
 
+  const menu = createMenu();
+  Menu.setApplicationMenu(menu);
+
   ipcMain.handle('open-dialog', async () => {
     const dirPath = await dialog
       .showOpenDialog(mainWindow, {
@@ -54,7 +58,6 @@ const createWindow = () => {
           .map(({ name }) => path.join(dirPath, name))
       );
   });
-
   if (isDev) mainWindow.webContents.openDevTools({ mode: 'detach' });
 
   mainWindow.loadFile('dist/index.html');
