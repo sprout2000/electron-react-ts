@@ -3,7 +3,7 @@ import path from 'path';
 import { BrowserWindow, Menu, app, session, ipcMain, dialog } from 'electron';
 import { searchDevtools } from 'electron-search-devtools';
 
-import { createMenu } from './menu';
+import { template } from './template';
 
 const isDev = process.env.NODE_ENV === 'development';
 
@@ -34,7 +34,7 @@ const createWindow = () => {
     },
   });
 
-  const menu = createMenu();
+  const menu = Menu.buildFromTemplate(template);
   Menu.setApplicationMenu(menu);
 
   ipcMain.handle('open-dialog', async () => {
