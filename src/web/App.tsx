@@ -21,8 +21,8 @@ export const App = (): JSX.Element => {
       </button>
       <div>
         <ul>
-          {filelist.map((item, index) => (
-            <li className="list" key={index}>
+          {filelist.map((item) => (
+            <li className="list" key={item}>
               {item}
             </li>
           ))}
