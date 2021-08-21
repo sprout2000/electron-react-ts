@@ -5,9 +5,9 @@ A boilerplate for [Electron](https://www.electronjs.org/), [React](https://react
 ## Usage
 
 ```sh
-$ npx degit sprout2000/electron-react-ts
+$ git clone git@github.com:sprout2000/electron-react-ts.git
 $ cd electron-react-ts
 $ yarn install && yarn dev
 ```
 
-_Note that you will need to have [Node.js](https://nodejs.org/) and [Yarn](https://yarnpkg.com/) installed._
+_Note that you will need to have [Node.js](https://nodejs.org/), [Git](https://git-scm.com/) and [Yarn](https://yarnpkg.com/) installed._
