@@ -5,7 +5,7 @@ A boilerplate for [Electron](https://www.electronjs.org/), [React](https://react
 ## Usage
 
 ```sh
-$ git clone git@github.com:sprout2000/electron-react-ts.git
+$ git clone https://github.com/sprout2000/electron-react-ts.git
 $ cd electron-react-ts
 $ yarn install && yarn dev
 ```
