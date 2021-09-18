@@ -4,7 +4,8 @@
   "version": "0.4.2",
   "license": "MIT",
   "engines": {
-    "node": ">=14.0.0"
+    "node": ">=12.13.0",
+    "npm": "USE_YARN_INSTEAD"
   },
   "main": "dist/main.js",
   "scripts": {
