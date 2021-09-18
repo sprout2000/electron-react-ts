@@ -12,7 +12,7 @@ const editSub: MenuItemConstructorOptions['submenu'] = [
   {
     label: 'Redo',
     role: 'redo',
-    accelerator: isDarwin ? 'Cmd+Shif+Z' : 'Ctrl+Y',
+    accelerator: isDarwin ? 'Cmd+Shift+Z' : 'Ctrl+Y',
   },
   { type: 'separator' },
   {
