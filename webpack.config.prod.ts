@@ -3,8 +3,10 @@ import { Configuration } from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 
+const isDev = process.env.NODE_ENV === 'development';
+
 const base: Configuration = {
-  mode: 'production',
+  mode: isDev ? 'development' : 'production',
   node: {
     __dirname: false,
     __filename: false,
@@ -16,7 +18,7 @@ const base: Configuration = {
     path: path.resolve(__dirname, 'dist'),
     publicPath: './',
     filename: '[name].js',
-    assetModuleFilename: 'images/[name][ext]',
+    assetModuleFilename: 'assets/[name][ext]',
   },
   module: {
     rules: [
@@ -35,14 +37,14 @@ const base: Configuration = {
           {
             loader: 'css-loader',
             options: {
-              sourceMap: false,
+              sourceMap: isDev,
               importLoaders: 1,
             },
           },
           {
             loader: 'sass-loader',
             options: {
-              sourceMap: false,
+              sourceMap: isDev,
             },
           },
         ],
@@ -55,8 +57,8 @@ const base: Configuration = {
   },
   stats: 'errors-only',
   performance: { hints: false },
-  optimization: { minimize: true },
-  devtool: undefined,
+  optimization: { minimize: !isDev },
+  devtool: isDev ? 'inline-source-map' : undefined,
 };
 
 const main: Configuration = {
@@ -85,7 +87,7 @@ const renderer: Configuration = {
     new MiniCssExtractPlugin(),
     new HtmlWebpackPlugin({
       template: './src/web/index.html',
-      minify: true,
+      minify: !isDev,
       inject: 'body',
       filename: 'index.html',
       scriptLoading: 'blocking',

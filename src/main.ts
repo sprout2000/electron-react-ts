@@ -1,6 +1,5 @@
-import fs from 'fs';
 import path from 'path';
-import { BrowserWindow, Menu, app, session, ipcMain, dialog } from 'electron';
+import { BrowserWindow, Menu, app, session } from 'electron';
 import { searchDevtools } from 'electron-search-devtools';
 
 import { template } from './template';
@@ -25,10 +24,6 @@ if (isDev) {
 
 const createWindow = () => {
   const mainWindow = new BrowserWindow({
-    width: 600,
-    height: 400,
-    show: false,
-    title: 'Electron',
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
     },
@@ -37,31 +32,8 @@ const createWindow = () => {
   const menu = Menu.buildFromTemplate(template);
   Menu.setApplicationMenu(menu);
 
-  ipcMain.handle('open-dialog', async () => {
-    const dirPath = await dialog
-      .showOpenDialog(mainWindow, {
-        properties: ['openDirectory'],
-      })
-      .then((result) => {
-        if (result.canceled) return;
-        return result.filePaths[0];
-      })
-      .catch((err) => console.log(err));
-
-    if (!dirPath) return;
-
-    return fs.promises
-      .readdir(dirPath, { withFileTypes: true })
-      .then((dirents) =>
-        dirents
-          .filter((dirent) => dirent.isFile())
-          .map(({ name }) => path.join(dirPath, name))
-      );
-  });
   if (isDev) mainWindow.webContents.openDevTools({ mode: 'detach' });
-
   mainWindow.loadFile('dist/index.html');
-  mainWindow.once('ready-to-show', () => mainWindow.show());
 };
 
 app.whenReady().then(async () => {

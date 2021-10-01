@@ -2,14 +2,14 @@ import { build } from 'electron-builder';
 
 build({
   config: {
-    productName: 'Electron App',
+    productName: 'Electron',
     copyright: '© 2020 sprout2000 and other contributors.',
     files: ['dist/**/*'],
     directories: {
       output: 'release',
     },
     win: {
-      target: ['nsis'],
+      target: 'nsis',
       publisherName: 'sprout2000',
       fileAssociations: [
         {
@@ -21,23 +21,30 @@ build({
     nsis: {
       oneClick: false,
       perMachine: false,
+      installerIcon: 'assets/installer.ico',
       createDesktopShortcut: false,
       createStartMenuShortcut: true,
-      artifactName: '${productName}-${version}-${platform}-installer.${ext}',
+      artifactName:
+        '${productName}-${version}-${platform}-${arch}-installer.${ext}',
     },
     mac: {
-      category: 'public.app-category.photography',
-      target: ['dmg'],
+      identity: null,
       icon: 'assets/icon.icns',
+      category: 'public.app-category.developer-tools',
+      artifactName: '${productName}-${version}-${platform}-${arch}.${ext}',
+      target: {
+        target: 'default',
+      },
       extendInfo: {
-        CFBundleName: 'LeafView',
-        CFBundleDisplayName: 'LeafView',
-        CFBundleExecutable: 'LeafView',
+        CFBundleName: 'Electron',
+        CFBundleDisplayName: 'Electron',
+        CFBundleExecutable: 'Electron',
         CFBundlePackageType: 'APPL',
         CFBundleDocumentTypes: [
           {
             CFBundleTypeName: 'ImageFile',
             CFBundleTypeRole: 'Viewer',
+            LSHandlerRank: 'Default',
             LSItemContentTypes: [
               'com.google.webp',
               'com.microsoft.bmp',
@@ -46,15 +53,20 @@ build({
               'public.jpeg',
               'public.png',
             ],
-            LSHandlerRank: 'Default',
           },
         ],
         NSRequiresAquaSystemAppearance: false,
       },
-      identity: null,
+    },
+    dmg: {
+      icon: 'assets/dmg.icns',
+      sign: false,
     },
     linux: {
-      target: ['AppImage'],
+      target: 'AppImage',
+      artifactName: '${productName}-${version}-${platform}-${arch}.${ext}',
     },
   },
-}).catch((err) => console.log(err));
+})
+  .then(() => console.log('Successfully completed.'))
+  .catch((err) => console.log(err));
