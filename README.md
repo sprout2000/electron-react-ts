@@ -2,6 +2,8 @@
 
 An [Electron](https://www.electronjs.org/) boilerplate with hot reloading for [React](https://reactjs.org/) and [TypeScript](https://www.typescriptlang.org/).
 
+<img width="1440" alt="2021-10-01-134147" src="https://user-images.githubusercontent.com/52094761/135567670-36993d6b-1921-4834-8f0e-925dd51ec165.png">
+
 ## :green_book: Usage
 
 ```sh
