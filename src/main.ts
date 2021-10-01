@@ -1,8 +1,6 @@
 import path from 'path';
-import { BrowserWindow, Menu, app, session } from 'electron';
+import { BrowserWindow, app, session } from 'electron';
 import { searchDevtools } from 'electron-search-devtools';
-
-import { template } from './template';
 
 const isDev = process.env.NODE_ENV === 'development';
 
@@ -23,14 +21,7 @@ if (isDev) {
 /// #endif
 
 const createWindow = () => {
-  const mainWindow = new BrowserWindow({
-    webPreferences: {
-      preload: path.join(__dirname, 'preload.js'),
-    },
-  });
-
-  const menu = Menu.buildFromTemplate(template);
-  Menu.setApplicationMenu(menu);
+  const mainWindow = new BrowserWindow();
 
   if (isDev) mainWindow.webContents.openDevTools({ mode: 'detach' });
   mainWindow.loadFile('dist/index.html');
