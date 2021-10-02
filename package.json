@@ -1,7 +1,7 @@
 {
   "name": "electron-react-ts",
   "description": "An Electron boilerplate with hot reloading for React and TypeScript.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "MIT",
   "engines": {
     "node": ">=12.13.0"
