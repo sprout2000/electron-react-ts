@@ -23,7 +23,7 @@ const base: Configuration = {
   module: {
     rules: [
       {
-        test: /\.tsx?$/,
+        test: /\.(j|t)sx?$/,
         exclude: /node_modules/,
         use: [
           { loader: 'ts-loader' },
@@ -50,7 +50,7 @@ const base: Configuration = {
         ],
       },
       {
-        test: /\.(bmp|ico|gif|jpe?g|png|svg|ttf|eot|woff?2?)$/,
+        test: /\.(ico|gif|jpe?g|png|svg|webp|ttf|otf|eot|woff?2?)$/,
         type: 'asset/resource',
       },
     ],

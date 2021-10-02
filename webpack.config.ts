@@ -20,13 +20,13 @@ const config: Configuration = {
     path: path.resolve(__dirname, 'dist'),
     publicPath: './',
     filename: '[name].js',
-    assetModuleFilename: 'images/[name][ext]',
+    assetModuleFilename: 'assets/[name][ext]',
   },
   module: {
     rules: [
       {
-        test: /\.tsx?$/,
-        exclude: /(node_modules|tests|mocks)/,
+        test: /\.(j|t)sx?$/,
+        exclude: /node_modules/,
         use: 'ts-loader',
       },
       {
@@ -49,7 +49,7 @@ const config: Configuration = {
         ],
       },
       {
-        test: /\.(bmp|ico|gif|jpe?g|png|svg|ttf|eot|woff?2?)$/,
+        test: /\.(ico|gif|jpe?g|png|svg|webp|ttf|otf|eot|woff?2?)$/,
         type: 'asset/resource',
       },
     ],
