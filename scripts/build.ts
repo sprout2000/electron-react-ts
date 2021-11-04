@@ -64,7 +64,7 @@ build({
     },
     linux: {
       target: 'AppImage',
-      artifactName: '${productName}-${version}-${platform}-${arch}.${ext}',
+      artifactName: '${productName}-${version}-${platform}-x64.${ext}',
     },
   },
 })
