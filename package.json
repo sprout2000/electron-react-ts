@@ -26,7 +26,8 @@
     "package": "run-s clean build:prod build:pack",
     "lint": "run-s lint:*",
     "lint:eslint": "eslint . --ext .ts,.tsx --fix",
-    "lint:prettier": "prettier --write ."
+    "lint:prettier": "prettier --write .",
+    "prepare": "git config --local core.hooksPath hooks"
   },
   "dependencies": {
     "react": "^17.0.2",
