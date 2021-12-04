@@ -40,7 +40,7 @@
     "@types/react-dom": "^17.0.11",
     "cross-env": "^7.0.3",
     "css-loader": "^6.5.1",
-    "electron": "^16.0.3",
+    "electron": "^16.0.4",
     "electron-builder": "^22.14.5",
     "html-webpack-plugin": "^5.5.0",
     "ifdef-loader": "^2.3.2",
@@ -61,11 +61,11 @@
     "electron-notarize": "^1.1.1",
     "electron-reload": "^2.0.0-alpha.1",
     "electron-search-devtools": "^1.5.1",
-    "eslint": "^8.3.0",
+    "eslint": "^8.4.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-react": "^7.27.1",
     "eslint-plugin-react-hooks": "^4.3.0",
-    "prettier": "^2.5.0",
+    "prettier": "^2.5.1",
     "wait-on": "^6.0.0"
   }
 }
