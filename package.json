@@ -23,7 +23,7 @@
     "serve": "electron .",
     "build": "cross-env NODE_ENV=\"development\" webpack --config webpack.config.prod.ts --progress",
     "build:prod": "cross-env NODE_ENV=\"production\" webpack --config webpack.config.prod.ts --progress",
-    "build:package": "ts-node ./electron-builder.ts"
+    "build:release": "ts-node ./electron-builder.ts"
   },
   "dependencies": {
     "react": "^17.0.2",
