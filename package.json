@@ -3,6 +3,9 @@
   "description": "An Electron boilerplate with hot reloading for React and TypeScript.",
   "version": "1.1.2",
   "license": "MIT",
+  "author": {
+    "name": "sprout2000"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/sprout2000/electron-react-ts"
@@ -12,22 +15,15 @@
   },
   "main": "dist/main.js",
   "scripts": {
-    "start": "run-s clean build serve",
+    "start": "run-s build serve",
     "dev": "run-p dev:*",
     "dev:electron": "wait-on ./dist/index.html && cross-env NODE_ENV=\"development\" electron .",
     "dev:tsc": "tsc -w -p tsconfig.main.json",
     "dev:webpack": "webpack --watch --progress",
-    "predev": "rimraf dist",
-    "clean": "rimraf dist release",
     "serve": "electron .",
     "build": "cross-env NODE_ENV=\"development\" webpack --config webpack.config.prod.ts --progress",
     "build:prod": "cross-env NODE_ENV=\"production\" webpack --config webpack.config.prod.ts --progress",
-    "build:pack": "ts-node ./scripts/build.ts",
-    "package": "run-s clean build:prod build:pack",
-    "lint": "run-s lint:*",
-    "lint:eslint": "eslint . --ext .ts,.tsx --fix",
-    "lint:prettier": "prettier --write .",
-    "prepare": "git config --local core.hooksPath hooks"
+    "build:package": "ts-node ./electron-builder.ts"
   },
   "dependencies": {
     "react": "^17.0.2",
@@ -35,7 +31,7 @@
   },
   "devDependencies": {
     "@types/mini-css-extract-plugin": "^2.4.0",
-    "@types/node": "^16.11.11",
+    "@types/node": "^17.0.0",
     "@types/react": "^17.0.37",
     "@types/react-dom": "^17.0.11",
     "cross-env": "^7.0.3",
@@ -46,22 +42,17 @@
     "ifdef-loader": "^2.3.2",
     "mini-css-extract-plugin": "^2.4.5",
     "npm-run-all": "^4.1.5",
-    "rimraf": "^3.0.2",
-    "sass": "^1.44.0",
-    "sass-loader": "^12.3.0",
     "ts-loader": "^9.2.6",
     "ts-node": "^10.4.0",
-    "typescript": "^4.5.2",
-    "webpack": "^5.64.4",
+    "typescript": "^4.5.4",
+    "webpack": "^5.65.0",
     "webpack-cli": "^4.9.1"
   },
   "optionalDependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.5.0",
-    "@typescript-eslint/parser": "^5.5.0",
-    "electron-notarize": "^1.1.1",
+    "@typescript-eslint/eslint-plugin": "^5.7.0",
+    "@typescript-eslint/parser": "^5.7.0",
     "electron-reload": "^2.0.0-alpha.1",
-    "electron-search-devtools": "^1.5.1",
-    "eslint": "^8.4.0",
+    "eslint": "^8.4.1",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-react": "^7.27.1",
     "eslint-plugin-react-hooks": "^4.3.0",

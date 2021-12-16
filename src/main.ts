@@ -1,6 +1,5 @@
 import path from 'path';
-import { BrowserWindow, app, session } from 'electron';
-import { searchDevtools } from 'electron-search-devtools';
+import { BrowserWindow, app } from 'electron';
 
 const isDev = process.env.NODE_ENV === 'development';
 
@@ -21,23 +20,17 @@ if (isDev) {
 /// #endif
 
 const createWindow = () => {
-  const mainWindow = new BrowserWindow();
+  const mainWindow = new BrowserWindow({
+    width: 600,
+    height: 400,
+    webPreferences: {
+      preload: path.join(__dirname, 'preload.js'),
+    },
+  });
 
   if (isDev) mainWindow.webContents.openDevTools({ mode: 'detach' });
   mainWindow.loadFile('dist/index.html');
 };
 
-app.whenReady().then(async () => {
-  if (isDev) {
-    const devtools = await searchDevtools('REACT');
-    if (devtools) {
-      await session.defaultSession.loadExtension(devtools, {
-        allowFileAccess: true,
-      });
-    }
-  }
-
-  createWindow();
-});
-
+app.whenReady().then(createWindow);
 app.once('window-all-closed', () => app.quit());

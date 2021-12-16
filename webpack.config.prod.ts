@@ -5,7 +5,7 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 
 const isDev = process.env.NODE_ENV === 'development';
 
-const base: Configuration = {
+const common: Configuration = {
   mode: isDev ? 'development' : 'production',
   node: {
     __dirname: false,
@@ -31,18 +31,11 @@ const base: Configuration = {
         ],
       },
       {
-        test: /\.s?css$/,
+        test: /\.css$/,
         use: [
           MiniCssExtractPlugin.loader,
           {
             loader: 'css-loader',
-            options: {
-              sourceMap: isDev,
-              importLoaders: 1,
-            },
-          },
-          {
-            loader: 'sass-loader',
             options: {
               sourceMap: isDev,
             },
@@ -50,19 +43,16 @@ const base: Configuration = {
         ],
       },
       {
-        test: /\.(ico|gif|jpe?g|png|svg|webp|ttf|otf|eot|woff?2?)$/,
+        test: /\.(ico|png|jpe?g|svg|eot|woff?2?)$/,
         type: 'asset/resource',
       },
     ],
   },
-  stats: 'errors-only',
-  performance: { hints: false },
-  optimization: { minimize: !isDev },
   devtool: isDev ? 'inline-source-map' : undefined,
 };
 
 const main: Configuration = {
-  ...base,
+  ...common,
   target: 'electron-main',
   entry: {
     main: './src/main.ts',
@@ -70,7 +60,7 @@ const main: Configuration = {
 };
 
 const preload: Configuration = {
-  ...base,
+  ...common,
   target: 'electron-preload',
   entry: {
     preload: './src/preload.ts',
@@ -78,19 +68,19 @@ const preload: Configuration = {
 };
 
 const renderer: Configuration = {
-  ...base,
+  ...common,
   target: 'web',
   entry: {
-    index: './src/web/index.tsx',
+    renderer: './src/renderer.tsx',
   },
   plugins: [
     new MiniCssExtractPlugin(),
     new HtmlWebpackPlugin({
-      template: './src/web/index.html',
       minify: !isDev,
       inject: 'body',
+      chunks: ['renderer'],
       filename: 'index.html',
-      scriptLoading: 'blocking',
+      template: './src/index.html',
     }),
   ],
 };

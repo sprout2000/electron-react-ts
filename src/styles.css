@@ -1,0 +1,12 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+.container {
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
