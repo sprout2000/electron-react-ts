@@ -20,10 +20,10 @@
     "dev": "run-p dev:*",
     "dev:electron": "wait-on ./dist/index.html && cross-env NODE_ENV=\"development\" electron .",
     "dev:tsc": "tsc -w -p tsconfig.main.json",
-    "dev:webpack": "webpack --watch --progress",
+    "dev:webpack": "webpack --watch",
     "serve": "electron .",
-    "build": "cross-env NODE_ENV=\"development\" webpack --config webpack.config.prod.ts --progress",
-    "build:prod": "cross-env NODE_ENV=\"production\" webpack --config webpack.config.prod.ts --progress",
+    "build": "cross-env NODE_ENV=\"development\" webpack --config webpack.config.prod.ts",
+    "build:prod": "cross-env NODE_ENV=\"production\" webpack --config webpack.config.prod.ts",
     "build:release": "ts-node ./electron-builder.ts"
   },
   "dependencies": {
