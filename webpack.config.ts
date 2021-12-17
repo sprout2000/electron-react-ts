@@ -1,6 +1,7 @@
 import path from 'path';
 import { Configuration } from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
+import CopyWebpackPlugin from 'copy-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 
 const config: Configuration = {
@@ -51,6 +52,14 @@ const config: Configuration = {
       chunks: ['renderer'],
       filename: 'index.html',
       template: './src/index.html',
+    }),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: './assets/icon.png',
+          to: './assets/icon.png',
+        },
+      ],
     }),
   ],
   devtool: 'inline-source-map',

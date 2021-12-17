@@ -18,6 +18,10 @@ build({
       identity: null,
       icon: 'assets/icon.icns',
     },
+    linux: {
+      category: 'Utility',
+      asarUnpack: ['dist/assets/icon.png'],
+    },
   },
 })
   .then(() => console.log('Completed.'))

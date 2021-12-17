@@ -3,6 +3,12 @@ import { BrowserWindow, app } from 'electron';
 
 const isDev = process.env.NODE_ENV === 'development';
 
+const getResourceDirectory = () => {
+  return isDev
+    ? path.join(process.cwd(), 'dist')
+    : path.join(process.resourcesPath, 'app.asar.unpacked', 'dist');
+};
+
 /// #if DEBUG
 const execPath =
   process.platform === 'win32'
@@ -26,6 +32,7 @@ const createWindow = () => {
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
     },
+    icon: path.join(getResourceDirectory(), 'assets/icon.png'),
   });
 
   if (isDev) mainWindow.webContents.openDevTools({ mode: 'detach' });
