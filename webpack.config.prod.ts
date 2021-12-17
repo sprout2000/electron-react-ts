@@ -86,7 +86,10 @@ const renderer: Configuration = {
     new CopyWebpackPlugin({
       patterns: [
         {
-          from: './assets/icon.png',
+          from:
+            process.platform === 'linux'
+              ? './assets/linux.png'
+              : './assets/windows.png',
           to: './assets/icon.png',
         },
       ],
