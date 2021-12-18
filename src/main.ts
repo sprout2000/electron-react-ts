@@ -1,5 +1,6 @@
 import path from 'path';
-import { BrowserWindow, app } from 'electron';
+import { BrowserWindow, app, session } from 'electron';
+import { searchDevtools } from 'electron-search-devtools';
 
 const isDev = process.env.NODE_ENV === 'development';
 
@@ -39,5 +40,17 @@ const createWindow = () => {
   mainWindow.loadFile('dist/index.html');
 };
 
-app.whenReady().then(createWindow);
+app.whenReady().then(async () => {
+  if (isDev) {
+    const devtool = await searchDevtools('REACT', { browser: 'google-chrome' });
+    if (devtool) {
+      await session.defaultSession.loadExtension(devtool, {
+        allowFileAccess: true,
+      });
+    }
+  }
+
+  createWindow();
+});
+
 app.once('window-all-closed', () => app.quit());
