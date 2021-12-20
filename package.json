@@ -16,8 +16,8 @@
   },
   "main": "dist/main.js",
   "scripts": {
-    "dev": "run-p dev:*",
     "predev": "rimraf dist",
+    "dev": "run-p dev:*",
     "dev:tsc": "tsc -w",
     "dev:webpack": "cross-env NODE_ENV=\"development\" webpack --progress",
     "dev:electron": "wait-on ./dist/index.html && cross-env NODE_ENV=\"development\" electron .",
