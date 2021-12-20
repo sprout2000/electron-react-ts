@@ -4,14 +4,16 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 
-const config: Configuration = {
-  mode: 'development',
-  target: 'web',
+const isDev = process.env.NODE_ENV === 'development';
+
+const common: Configuration = {
+  mode: isDev ? 'development' : 'production',
+  node: {
+    __dirname: false,
+    __filename: false,
+  },
   resolve: {
     extensions: ['.js', '.ts', '.jsx', '.tsx', '.json'],
-  },
-  entry: {
-    renderer: './src/renderer.tsx',
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -24,7 +26,10 @@ const config: Configuration = {
       {
         test: /\.(j|t)sx?$/,
         exclude: /node_modules/,
-        use: 'ts-loader',
+        use: [
+          { loader: 'ts-loader' },
+          { loader: 'ifdef-loader', options: { DEBUG: false } },
+        ],
       },
       {
         test: /\.css$/,
@@ -33,21 +38,48 @@ const config: Configuration = {
           {
             loader: 'css-loader',
             options: {
-              sourceMap: true,
+              sourceMap: isDev,
             },
           },
         ],
       },
       {
-        test: /\.(ico|gif|jpe?g|png|svg|webp|ttf|otf|eot|woff?2?)$/,
+        test: /\.(ico|png|jpe?g|svg|eot|woff?2?)$/,
         type: 'asset/resource',
       },
     ],
   },
+  stats: 'errors-only',
+  performance: { hints: false },
+  devtool: isDev ? 'inline-source-map' : undefined,
+};
+
+const main: Configuration = {
+  ...common,
+  target: 'electron-main',
+  entry: {
+    main: './src/main.ts',
+  },
+};
+
+const preload: Configuration = {
+  ...common,
+  target: 'electron-preload',
+  entry: {
+    preload: './src/preload.ts',
+  },
+};
+
+const renderer: Configuration = {
+  ...common,
+  target: 'web',
+  entry: {
+    renderer: './src/renderer.tsx',
+  },
   plugins: [
     new MiniCssExtractPlugin(),
     new HtmlWebpackPlugin({
-      minify: false,
+      minify: !isDev,
       inject: 'body',
       chunks: ['renderer'],
       filename: 'index.html',
@@ -65,7 +97,7 @@ const config: Configuration = {
       ],
     }),
   ],
-  devtool: 'inline-source-map',
 };
 
-export default config;
+const target = isDev ? [renderer] : [main, preload, renderer];
+export default target;

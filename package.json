@@ -18,13 +18,13 @@
   "scripts": {
     "dev": "run-p dev:*",
     "predev": "rimraf dist",
-    "start": "run-s build serve",
+    "dev:tsc": "tsc -w",
+    "dev:webpack": "cross-env NODE_ENV=\"development\" webpack --watch",
     "dev:electron": "wait-on ./dist/index.html && cross-env NODE_ENV=\"development\" electron .",
-    "dev:tsc": "tsc -w -p tsconfig.main.json",
-    "dev:webpack": "webpack --watch",
     "serve": "electron .",
-    "build": "cross-env NODE_ENV=\"development\" webpack --config webpack.config.prod.ts",
-    "build:prod": "cross-env NODE_ENV=\"production\" webpack --config webpack.config.prod.ts",
+    "start": "run-s build serve",
+    "build": "cross-env NODE_ENV=\"development\" webpack",
+    "build:prod": "cross-env NODE_ENV=\"production\" webpack",
     "build:release": "ts-node ./electron-builder.ts"
   },
   "dependencies": {
