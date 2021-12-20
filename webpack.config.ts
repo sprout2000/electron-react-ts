@@ -100,5 +100,5 @@ const renderer: Configuration = {
   ],
 };
 
-const target = isDev ? [renderer] : [main, preload, renderer];
-export default target;
+const config = isDev ? [renderer] : [main, preload, renderer];
+export default config;
