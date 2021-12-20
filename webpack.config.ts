@@ -49,6 +49,7 @@ const common: Configuration = {
       },
     ],
   },
+  watch: isDev,
   stats: 'errors-only',
   performance: { hints: false },
   devtool: isDev ? 'inline-source-map' : undefined,
