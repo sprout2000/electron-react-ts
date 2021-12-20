@@ -33,6 +33,7 @@ const createWindow = () => {
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
     },
+    title: 'Electron React TS',
     icon: path.join(getResourceDirectory(), 'assets/icon.png'),
   });
 
