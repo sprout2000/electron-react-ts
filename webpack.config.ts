@@ -34,7 +34,7 @@ const common: Configuration = {
       {
         test: /\.css$/,
         use: [
-          MiniCssExtractPlugin.loader,
+          { loader: MiniCssExtractPlugin.loader },
           {
             loader: 'css-loader',
             options: {
@@ -82,7 +82,6 @@ const renderer: Configuration = {
     new HtmlWebpackPlugin({
       minify: !isDev,
       inject: 'body',
-      chunks: ['renderer'],
       filename: 'index.html',
       template: './src/index.html',
     }),
