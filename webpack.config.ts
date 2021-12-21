@@ -91,7 +91,7 @@ const renderer: Configuration = {
           from:
             process.platform === 'linux'
               ? './assets/linux.png'
-              : './assets/windows.png',
+              : './assets/icon.png',
           to: './assets/icon.png',
         },
       ],
