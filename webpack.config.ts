@@ -24,11 +24,11 @@ const common: Configuration = {
   module: {
     rules: [
       {
-        test: /\.(j|t)sx?$/,
+        test: /\.tsx?$/,
         exclude: /node_modules/,
         use: [
           { loader: 'ts-loader' },
-          { loader: 'ifdef-loader', options: { DEBUG: false } },
+          { loader: 'ifdef-loader', options: { DEBUG: isDev } },
         ],
       },
       {
