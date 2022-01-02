@@ -4,15 +4,8 @@
   "version": "1.2.4",
   "license": "MIT",
   "author": {
-    "name": "sprout2000",
+    "name": "example.com",
     "email": "liraxo4023@ztymm.com"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/sprout2000/electron-react-ts"
-  },
-  "engines": {
-    "node": ">=12.13.1"
   },
   "main": "dist/main.js",
   "scripts": {
