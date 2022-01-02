@@ -4,7 +4,6 @@ import { searchDevtools } from 'electron-search-devtools';
 
 const isDev = process.env.NODE_ENV === 'development';
 
-/// #if DEBUG
 if (isDev) {
   const execPath =
     process.platform === 'win32'
@@ -18,7 +17,6 @@ if (isDev) {
     hardResetMethod: 'exit',
   });
 }
-/// #endif
 
 const createWindow = () => {
   const mainWindow = new BrowserWindow({
