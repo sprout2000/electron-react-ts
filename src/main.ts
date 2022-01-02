@@ -4,12 +4,6 @@ import { searchDevtools } from 'electron-search-devtools';
 
 const isDev = process.env.NODE_ENV === 'development';
 
-const getResourceDirectory = () => {
-  return isDev
-    ? path.join(process.cwd(), 'dist')
-    : path.join(process.resourcesPath, 'app.asar.unpacked', 'dist');
-};
-
 /// #if DEBUG
 if (isDev) {
   const execPath =
@@ -33,8 +27,6 @@ const createWindow = () => {
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
     },
-    title: 'Electron React TS',
-    icon: path.join(getResourceDirectory(), 'assets/icon.png'),
   });
 
   if (isDev) mainWindow.webContents.openDevTools({ mode: 'detach' });
