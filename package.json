@@ -18,7 +18,7 @@
     "start": "run-s build serve",
     "prebuild": "rimraf dist release",
     "build": "cross-env NODE_ENV=\"production\" webpack --progress",
-    "build:release": "ts-node ./electron-builder.ts"
+    "build:release": "ts-node ./build.ts"
   },
   "dependencies": {
     "react": "^17.0.2",
