@@ -22,12 +22,12 @@
   },
   "devDependencies": {
     "@types/mini-css-extract-plugin": "^2.4.0",
-    "@types/node": "^17.0.6",
+    "@types/node": "^17.0.7",
     "@types/react": "^17.0.38",
     "@types/react-dom": "^17.0.11",
     "cross-env": "^7.0.3",
     "css-loader": "^6.5.1",
-    "electron": "^16.0.5",
+    "electron": "^16.0.6",
     "electron-builder": "^22.14.5",
     "electron-reload": "^2.0.0-alpha.1",
     "electron-search-devtools": "^1.5.2",
@@ -44,8 +44,8 @@
     "webpack-cli": "^4.9.1"
   },
   "optionalDependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.8.1",
-    "@typescript-eslint/parser": "^5.8.1",
+    "@typescript-eslint/eslint-plugin": "^5.9.0",
+    "@typescript-eslint/parser": "^5.9.0",
     "eslint": "^8.6.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-react": "^7.28.0",
