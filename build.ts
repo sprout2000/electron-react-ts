@@ -13,10 +13,20 @@ build({
     },
     win: {
       icon: 'assets/icon.ico',
+      target: ['nsis', 'zip'],
+    },
+    nsis: {
+      oneClick: false,
+      installerIcon: 'assets/installer.ico',
+      artifactName: '${name}-${version}-installer.${ext}',
     },
     mac: {
       identity: null,
+      target: 'default',
       icon: 'assets/icon.icns',
+    },
+    dmg: {
+      icon: 'assets/dmg.icns',
     },
     linux: {
       category: 'Utility',
