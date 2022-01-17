@@ -13,6 +13,8 @@
     "dev:tsc": "tsc -w -p tsconfig.main.json",
     "dev:webpack": "cross-env NODE_ENV=\"development\" webpack --progress",
     "dev:electron": "wait-on ./dist/index.html && cross-env NODE_ENV=\"development\" electron .",
+    "predev": "rimraf dist",
+    "prebuild": "rimraf dist release",
     "build": "cross-env NODE_ENV=\"production\" webpack --progress",
     "build:release": "ts-node ./build.ts"
   },
@@ -34,6 +36,7 @@
     "html-webpack-plugin": "^5.5.0",
     "mini-css-extract-plugin": "^2.5.0",
     "npm-run-all": "^4.1.5",
+    "rimraf": "^3.0.2",
     "sass": "^1.48.0",
     "sass-loader": "^12.4.0",
     "ts-loader": "^9.2.6",
