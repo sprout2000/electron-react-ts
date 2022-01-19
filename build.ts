@@ -3,7 +3,7 @@ import { build } from 'electron-builder';
 build({
   config: {
     appId: 'com.example.app',
-    productName: 'Electron React TS',
+    productName: 'Sample',
     copyright: '© 2020 example.com',
     artifactName: '${name}-${version}-${platform}-${arch}.${ext}',
     files: ['dist/**/*'],
