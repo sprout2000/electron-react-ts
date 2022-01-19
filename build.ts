@@ -5,7 +5,7 @@ build({
     appId: 'com.example.app',
     productName: 'Sample',
     copyright: '© 2020 example.com',
-    artifactName: '${name}-${version}-${platform}-${arch}.${ext}',
+    artifactName: 'Sample-${version}-${platform}-${arch}.${ext}',
     files: ['dist/**/*'],
     directories: {
       output: 'release',
@@ -18,7 +18,7 @@ build({
     nsis: {
       oneClick: false,
       installerIcon: 'assets/installer.ico',
-      artifactName: '${name}-${version}-installer.${ext}',
+      artifactName: 'Sample-${version}-installer.${ext}',
     },
     mac: {
       identity: null,
