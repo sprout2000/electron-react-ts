@@ -1,11 +1,12 @@
 {
   "name": "electron-react-ts",
+  "productName": "Sample",
   "description": "An Electron boilerplate with hot reloading for React and TypeScript.",
   "version": "1.2.9",
   "license": "MIT",
   "author": {
     "name": "example.com",
-    "email": "liraxo4023@ztymm.com"
+    "email": "foo@example.com"
   },
   "main": "dist/main.js",
   "scripts": {
@@ -13,10 +14,10 @@
     "dev:tsc": "tsc -w -p tsconfig.main.json",
     "dev:webpack": "cross-env NODE_ENV=\"development\" webpack --progress",
     "dev:electron": "wait-on ./dist/index.html && cross-env NODE_ENV=\"development\" electron .",
-    "predev": "rimraf dist",
-    "prebuild": "rimraf dist release",
+    "predev": "rimraf dist release",
     "build": "cross-env NODE_ENV=\"production\" webpack --progress",
-    "build:release": "ts-node ./build.ts"
+    "prepackage": "run-s predev build",
+    "package": "ts-node ./electron-builder.ts"
   },
   "dependencies": {
     "react": "^17.0.2",
