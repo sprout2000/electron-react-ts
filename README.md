@@ -20,4 +20,4 @@ $ npm run package
 
 ## :copyright: License
 
-Copyright (c) 2020 sprout2000 and other contributors
+Copyright (c) 2020 sprout2000
