@@ -1,3 +1,17 @@
+@media (prefers-color-scheme: dark) {
+  body {
+    color: #f6f6f6;
+    background: #1e1e1e;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  body {
+    color: #1e1e1e;
+    background: #f6f6f6;
+  }
+}
+
 body {
   margin: 0;
   font-family: sans-serif;
