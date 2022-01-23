@@ -3,5 +3,6 @@ node_modules
 release
 yarn.lock
 yarn-*.log
+package-lock.json
 .env
 .DS_Store
