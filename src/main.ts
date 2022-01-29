@@ -1,6 +1,5 @@
 import path from 'path';
 import { BrowserWindow, app, session, nativeTheme } from 'electron';
-import electronReload from 'electron-reload';
 import { searchDevtools } from 'electron-search-devtools';
 
 const isDev = process.env.NODE_ENV === 'development';
@@ -11,7 +10,8 @@ if (isDev) {
       ? '../node_modules/electron/dist/electron.exe'
       : '../node_modules/.bin/electron';
 
-  electronReload(__dirname, {
+  // eslint-disable-next-line @typescript-eslint/no-var-requires
+  require('electron-reload')(__dirname, {
     electron: path.resolve(__dirname, execPath),
     forceHardReset: true,
     hardResetMethod: 'exit',
