@@ -18,7 +18,7 @@ $ yarn install
 $ yarn dev
 
 # on release build
-$ yarn package
+$ yarn build
 ```
 
 ## :copyright: License
