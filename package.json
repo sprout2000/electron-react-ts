@@ -2,7 +2,7 @@
   "name": "electron-react-ts",
   "productName": "Sample",
   "description": "An Electron boilerplate with hot reloading for React and TypeScript.",
-  "version": "1.3.2",
+  "version": "1.3.3",
   "license": "MIT",
   "author": {
     "name": "example.com",
