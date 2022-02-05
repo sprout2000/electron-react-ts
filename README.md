@@ -1,6 +1,7 @@
 # electron-react-ts
 
-<img src="./.ert/banner.svg" width="100%">
+<img src="./.ert/banner.svg#gh-light-mode-only" width="100%">
+<img src="./.ert/banner-dark.svg#gh-dark-mode-only" width="100%">
 
 An [Electron](https://www.electronjs.org/) boilerplate with hot reloading for [React](https://reactjs.org/) and [TypeScript](https://www.typescriptlang.org/).
 
