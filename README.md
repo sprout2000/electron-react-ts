@@ -12,13 +12,13 @@ An [Electron](https://www.electronjs.org/) boilerplate with hot reloading for [R
 ```sh
 $ git clone https://github.com/sprout2000/electron-react-ts.git
 $ cd electron-react-ts
-$ yarn install
+$ npm install
 
 # on development
-$ yarn dev
+$ npm run dev
 
 # on release build
-$ yarn build
+$ npm run build
 ```
 
 ## :copyright: License
