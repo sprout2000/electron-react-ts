@@ -14,10 +14,10 @@ $ git clone https://github.com/sprout2000/electron-react-ts.git
 $ cd electron-react-ts
 $ npm install
 
-# on development
+# for development
 $ npm run dev
 
-# on release build
+# for production
 $ npm run build
 ```
 
