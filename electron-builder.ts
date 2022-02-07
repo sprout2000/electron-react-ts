@@ -32,6 +32,4 @@ build({
       category: 'Utility',
     },
   },
-})
-  .then(() => console.log('Completed.'))
-  .catch((err) => console.log(err));
+});
