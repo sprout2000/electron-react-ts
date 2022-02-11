@@ -48,4 +48,13 @@ app.whenReady().then(async () => {
   createWindow();
 });
 
+app.setAboutPanelOptions({
+  applicationName: app.name,
+  applicationVersion:
+    process.platform === 'darwin'
+      ? app.getVersion()
+      : `v${app.getVersion()} (${process.versions['electron']})`,
+  version: process.versions['electron'],
+});
+
 app.once('window-all-closed', () => app.quit());
