@@ -13,10 +13,8 @@ const App = () => {
     <div className="container">
       <h1>Hello.</h1>
       <h2>{count}</h2>
-      <div>
-        <button onClick={onCountDown}>Down</button>
-        <button onClick={onCountUp}>Up</button>
-      </div>
+      <button onClick={onCountUp}>Up</button>
+      <button onClick={onCountDown}>Down</button>
     </div>
   );
 };
