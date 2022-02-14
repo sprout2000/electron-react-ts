@@ -11,10 +11,11 @@ const App = () => {
 
   return (
     <div className="container">
-      <h1>Hello.</h1>
-      <h2>{count}</h2>
-      <button onClick={onCountUp}>Up</button>
-      <button onClick={onCountDown}>Down</button>
+      <h1>{count}</h1>
+      <div>
+        <button onClick={onCountDown}>&#x25BC;</button>
+        <button onClick={onCountUp}>&#x25B2;</button>
+      </div>
     </div>
   );
 };
