@@ -3,9 +3,9 @@ import { build } from 'electron-builder';
 build({
   config: {
     appId: 'com.example.app',
-    productName: 'Sample',
+    productName: 'Electron React TypeScript',
     copyright: '© 2020 example.com',
-    artifactName: 'Sample-${version}-${platform}-${arch}.${ext}',
+    artifactName: 'ERT-${version}-${platform}-${arch}.${ext}',
     files: ['dist/**/*'],
     directories: {
       output: 'release',
@@ -18,7 +18,7 @@ build({
     nsis: {
       oneClick: false,
       installerIcon: 'assets/installer.ico',
-      artifactName: 'Sample-${version}-installer.${ext}',
+      artifactName: 'ERT-${version}-installer.${ext}',
     },
     mac: {
       identity: null,
