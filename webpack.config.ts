@@ -7,10 +7,6 @@ const isDev = process.env.NODE_ENV === 'development';
 
 const common: Configuration = {
   mode: isDev ? 'development' : 'production',
-  node: {
-    __dirname: false,
-    __filename: false,
-  },
   resolve: {
     extensions: ['.js', '.ts', '.jsx', '.tsx', '.json'],
   },
