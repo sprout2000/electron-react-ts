@@ -1,5 +1,5 @@
 import path from 'path';
-import { BrowserWindow, app, session } from 'electron';
+import { BrowserWindow, app, ipcMain, session } from 'electron';
 import { searchDevtools } from 'electron-search-devtools';
 
 const isDev = process.env.NODE_ENV === 'development';
@@ -18,11 +18,13 @@ if (isDev) {
 
 const createWindow = () => {
   const mainWindow = new BrowserWindow({
-    width: 600,
-    height: 400,
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
     },
+  });
+
+  ipcMain.on('update-title', (_e, arg) => {
+    mainWindow.setTitle(`Electron React TypeScript: ${arg}`);
   });
 
   if (isDev) mainWindow.webContents.openDevTools({ mode: 'detach' });

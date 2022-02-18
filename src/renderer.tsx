@@ -1,13 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
-
 import './styles.scss';
+
+const { myAPI } = window;
 
 const App = () => {
   const [count, setCount] = useState(0);
 
   const onCountUp = () => setCount((count) => count + 1);
   const onCountDown = () => setCount((count) => count - 1);
+
+  useEffect(() => {
+    myAPI.update(count);
+  }, [count]);
 
   return (
     <div className="container">
