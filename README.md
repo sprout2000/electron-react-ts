@@ -5,7 +5,7 @@ An [Electron](https://www.electronjs.org/) boilerplate with hot reloading for [R
 <img src="./.ert/banner.svg#gh-light-mode-only" width="100%">
 <img src="./.ert/banner-dark.svg#gh-dark-mode-only" width="100%">
 
-<img src="./.ert/screenshot.png" width="100%">
+<img src="./.ert/screenshot.png" width="60%">
 
 ## :green_book: Usage
 
