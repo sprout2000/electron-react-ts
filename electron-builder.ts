@@ -30,6 +30,7 @@ build({
     },
     linux: {
       category: 'Utility',
+      target: ['deb'],
     },
   },
 });
