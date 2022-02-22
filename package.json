@@ -4,10 +4,6 @@
   "description": "An Electron boilerplate with hot reloading for React and TypeScript.",
   "version": "1.4.2",
   "license": "MIT",
-  "author": {
-    "name": "example.com",
-    "email": "foo@example.com"
-  },
   "main": "dist/main.js",
   "scripts": {
     "dev": "run-p dev:*",
@@ -30,7 +26,6 @@
     "cross-env": "^7.0.3",
     "css-loader": "^6.6.0",
     "electron": "^17.0.1",
-    "electron-builder": "^22.14.13",
     "electron-reload": "^2.0.0-alpha.1",
     "electron-search-devtools": "^1.6.0",
     "html-webpack-plugin": "^5.5.0",
