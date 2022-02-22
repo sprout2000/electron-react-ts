@@ -73,5 +73,5 @@ const renderer: Configuration = {
   ],
 };
 
-const config = isDev ? [renderer] : [main, preload, renderer];
+const config = isDev ? renderer : [main, preload, renderer];
 export default config;
