@@ -5,7 +5,6 @@
 
 An [Electron](https://www.electronjs.org/) boilerplate with hot reloading for [React](https://reactjs.org/) and [TypeScript](https://www.typescriptlang.org/).
 
-[![GitHub CI](https://github.com/sprout2000/electron-react-ts/actions/workflows/build.yml/badge.svg)](https://github.com/sprout2000/electron-react-ts/actions/workflows/build.yml)
 [![GitHub license](https://img.shields.io/github/license/sprout2000/electron-react-ts)](https://github.com/sprout2000/electron-react-ts/blob/main/LICENSE.md)
 [![GitHub stars](https://img.shields.io/github/stars/sprout2000/electron-react-ts)](https://github.com/sprout2000/electron-react-ts/stargazers)
 
