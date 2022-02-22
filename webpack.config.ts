@@ -44,7 +44,7 @@ const main: Configuration = {
   ...common,
   target: 'electron-main',
   entry: {
-    main: './src/main.ts',
+    main: './src/main/main.ts',
   },
 };
 
@@ -52,7 +52,7 @@ const preload: Configuration = {
   ...common,
   target: 'electron-preload',
   entry: {
-    preload: './src/preload.ts',
+    preload: './src/main/preload.ts',
   },
 };
 
