@@ -1,0 +1,18 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+.container {
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  width: 4em;
+  margin: 0 0.5em;
+}

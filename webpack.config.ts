@@ -25,23 +25,8 @@ const common: Configuration = {
         loader: 'ts-loader',
       },
       {
-        test: /\.s?css$/,
-        use: [
-          { loader: MiniCssExtractPlugin.loader },
-          {
-            loader: 'css-loader',
-            options: {
-              importLoaders: 1,
-              sourceMap: isDev,
-            },
-          },
-          {
-            loader: 'sass-loader',
-            options: {
-              sourceMap: isDev,
-            },
-          },
-        ],
+        test: /\.css$/,
+        use: [MiniCssExtractPlugin.loader, 'css-loader'],
       },
       {
         test: /\.(ico|png|jpe?g|svg|eot|woff?2?)$/,
@@ -75,7 +60,7 @@ const renderer: Configuration = {
   ...common,
   target: 'web',
   entry: {
-    renderer: './src/renderer.tsx',
+    app: './src/app.tsx',
   },
   plugins: [
     new MiniCssExtractPlugin(),
