@@ -1,9 +1,7 @@
 import path from 'path';
 import { BrowserWindow, app, ipcMain } from 'electron';
 
-const isDev = process.env.NODE_ENV === 'development';
-
-if (isDev) {
+if (process.env.NODE_ENV === 'development') {
   const execPath =
     process.platform === 'win32'
       ? '../node_modules/electron/dist/electron.exe'
