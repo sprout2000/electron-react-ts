@@ -1,4 +1,3 @@
-import path from 'path';
 import { Configuration } from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
@@ -12,10 +11,7 @@ const common: Configuration = {
   },
   externals: ['fsevents'],
   output: {
-    path: path.resolve(__dirname, 'dist'),
     publicPath: './',
-    filename: '[name].js',
-    assetModuleFilename: 'assets/[name][ext]',
   },
   module: {
     rules: [
@@ -35,8 +31,6 @@ const common: Configuration = {
     ],
   },
   watch: isDev,
-  stats: 'errors-only',
-  performance: { hints: false },
   devtool: isDev ? 'inline-source-map' : undefined,
 };
 
@@ -65,9 +59,6 @@ const renderer: Configuration = {
   plugins: [
     new MiniCssExtractPlugin(),
     new HtmlWebpackPlugin({
-      minify: !isDev,
-      inject: 'body',
-      filename: 'index.html',
       template: './src/index.html',
     }),
   ],
