@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import ReactDOM from 'react-dom';
-import './styles.css';
+import './App.css';
 
 const { myAPI } = window;
 
-const App = () => {
+export const App = () => {
   const [count, setCount] = useState(0);
 
   const onCountUp = () => setCount((count) => count + 1);
@@ -24,10 +23,3 @@ const App = () => {
     </div>
   );
 };
-
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
