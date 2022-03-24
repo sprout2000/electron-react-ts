@@ -1,7 +1,10 @@
 import path from 'path';
-import { BrowserWindow, app, ipcMain } from 'electron';
+import { searchDevtools } from 'electron-search-devtools';
+import { BrowserWindow, app, ipcMain, session } from 'electron';
 
-if (process.env.NODE_ENV === 'development') {
+const isDev = process.env.NODE_ENV === 'development';
+
+if (isDev) {
   const execPath =
     process.platform === 'win32'
       ? '../node_modules/electron/dist/electron.exe'
@@ -12,7 +15,7 @@ if (process.env.NODE_ENV === 'development') {
   });
 }
 
-const createWindow = () => {
+const createWindow = async () => {
   const mainWindow = new BrowserWindow({
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
@@ -22,6 +25,15 @@ const createWindow = () => {
   ipcMain.on('update-title', (_e, arg) => {
     mainWindow.setTitle(`Electron React TypeScript: ${arg}`);
   });
+
+  if (isDev) {
+    const devtools = await searchDevtools('REACT');
+    devtools &&
+      (await session.defaultSession.loadExtension(devtools, {
+        allowFileAccess: true,
+      }));
+    mainWindow.webContents.openDevTools({ mode: 'detach' });
+  }
 
   mainWindow.loadFile('dist/index.html');
 };
