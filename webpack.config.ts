@@ -38,7 +38,7 @@ const main: Configuration = {
   ...common,
   target: 'electron-main',
   entry: {
-    main: './src/main/main.ts',
+    main: './src/main.ts',
   },
 };
 
@@ -46,7 +46,7 @@ const preload: Configuration = {
   ...common,
   target: 'electron-preload',
   entry: {
-    preload: './src/main/preload.ts',
+    preload: './src/preload.ts',
   },
 };
 
@@ -54,12 +54,12 @@ const renderer: Configuration = {
   ...common,
   target: 'web',
   entry: {
-    app: './src/index.tsx',
+    app: './src/web/index.tsx',
   },
   plugins: [
     new MiniCssExtractPlugin(),
     new HtmlWebpackPlugin({
-      template: './src/index.html',
+      template: './src/web/index.html',
     }),
   ],
 };
