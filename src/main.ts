@@ -15,7 +15,7 @@ if (isDev) {
   });
 }
 
-const createWindow = async () => {
+const createWindow = () => {
   const mainWindow = new BrowserWindow({
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
@@ -26,14 +26,14 @@ const createWindow = async () => {
     mainWindow.setTitle(`Electron React TypeScript: ${arg}`);
   });
 
-  if (isDev) {
-    const devtools = await searchDevtools('REACT');
-    devtools &&
-      (await session.defaultSession.loadExtension(devtools, {
-        allowFileAccess: true,
-      }));
-    mainWindow.webContents.openDevTools({ mode: 'detach' });
-  }
+  searchDevtools('REACT')
+    .then((devtools) => {
+      devtools &&
+        session.defaultSession.loadExtension(devtools, {
+          allowFileAccess: true,
+        });
+    })
+    .catch((err) => console.log(err));
 
   mainWindow.loadFile('dist/index.html');
 };
