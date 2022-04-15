@@ -26,14 +26,17 @@ const createWindow = () => {
     mainWindow.setTitle(`Electron React TypeScript: ${arg}`);
   });
 
-  searchDevtools('REACT')
-    .then((devtools) => {
-      devtools &&
+  if (isDev) {
+    searchDevtools('REACT')
+      .then((devtools) => {
         session.defaultSession.loadExtension(devtools, {
           allowFileAccess: true,
         });
-    })
-    .catch((err) => console.log(err));
+      })
+      .catch((err) => console.log(err));
+
+    mainWindow.webContents.openDevTools({ mode: 'detach' });
+  }
 
   mainWindow.loadFile('dist/index.html');
 };
