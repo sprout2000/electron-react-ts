@@ -24,6 +24,6 @@ $ npm run build
 
 _NOTE: You will need to have [Node.js](https://nodejs.org/) and [Git](https://git-scm.com/) installed._
 
-## :copyright: License
+## :copyright: Copyright
 
 Copyright (c) 2021 sprout2000
