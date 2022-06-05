@@ -5,13 +5,13 @@ import { BrowserWindow, app, ipcMain, session } from 'electron';
 const isDev = process.env.NODE_ENV === 'development';
 
 if (isDev) {
-  const execPath =
-    process.platform === 'win32'
-      ? '../node_modules/electron/dist/electron.exe'
-      : '../node_modules/.bin/electron';
-
   require('electron-reload')(__dirname, {
-    electron: path.resolve(__dirname, execPath),
+    electron: path.resolve(
+      __dirname,
+      process.platform === 'win32'
+        ? '../node_modules/electron/dist/electron.exe'
+        : '../node_modules/.bin/electron'
+    ),
   });
 }
 
