@@ -24,7 +24,7 @@
     "@types/react-dom": "^18.0.5",
     "cross-env": "^7.0.3",
     "css-loader": "^6.7.1",
-    "electron": "^19.0.6",
+    "electron": "^19.0.7",
     "electron-reload": "^2.0.0-alpha.1",
     "electron-search-devtools": "^1.8.5",
     "html-webpack-plugin": "^5.5.0",
