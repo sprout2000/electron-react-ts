@@ -19,7 +19,7 @@ $ npm install
 $ npm run dev
 
 # on production
-$ npm run build
+$ npm run build && npm run package
 ```
 
 _NOTE: You will need to have [Node.js](https://nodejs.org/) and [Git](https://git-scm.com/) installed._
