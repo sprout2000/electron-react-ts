@@ -2,7 +2,7 @@
   "name": "electron-react-ts",
   "productName": "Electron React TypeScript",
   "description": "An Electron boilerplate with hot reloading for React and TypeScript.",
-  "version": "1.7.6",
+  "version": "1.7.7",
   "license": "MIT",
   "author": "sprout2000",
   "main": "dist/main.js",
