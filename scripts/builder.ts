@@ -10,7 +10,6 @@ build({
       output: 'release',
     },
     win: {
-      icon: 'assets/icon.ico',
       target: ['zip', 'nsis'],
     },
     nsis: {
@@ -19,7 +18,6 @@ build({
     },
     mac: {
       identity: null,
-      icon: 'assets/icon.icns',
       target: ['default'],
     },
     dmg: {
