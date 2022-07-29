@@ -1,8 +1,5 @@
 dist
-node_modules
 release
-npm-*.log
-pnpm-*.log
-yarn-*.log
+node_modules
 .env
 .DS_Store
