@@ -1,7 +1,7 @@
 {
   "name": "electron-react-ts",
   "description": "An Electron boilerplate",
-  "version": "1.8.0",
+  "version": "1.9.0",
   "license": "MIT",
   "author": "sprout2000",
   "main": "dist/main.js",
