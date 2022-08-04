@@ -25,7 +25,7 @@ app.whenReady().then(() => {
   });
 
   ipcMain.on('update-title', (_e, arg) => {
-    mainWindow.setTitle(`Electron React TypeScript: ${arg}`);
+    mainWindow.setTitle(`Electron App: ${arg}`);
   });
 
   // Load the React Devtools extension and open devtools in a new window.

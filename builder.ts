@@ -2,7 +2,7 @@ import { build } from 'electron-builder';
 
 build({
   config: {
-    productName: 'Sample',
+    productName: 'Electron App',
     artifactName: '${productName}-${version}-${platform}-${arch}.${ext}',
     files: ['dist/**/*'],
     directories: {
