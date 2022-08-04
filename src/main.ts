@@ -16,7 +16,7 @@ if (isDev) {
   });
 }
 
-// Create an instance of BrowserWindow in the application startup event.
+// Create a new BrowerWindow on app launch event.
 app.whenReady().then(() => {
   const mainWindow = new BrowserWindow({
     webPreferences: {
