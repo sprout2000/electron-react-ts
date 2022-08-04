@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from 'react';
+import ReactDOM from 'react-dom/client';
+
 import './App.css';
 
-const { myAPI } = window;
-
-export const App = () => {
+const App = () => {
   const [count, setCount] = useState(0);
 
   const onCountUp = () => setCount((count) => count + 1);
   const onCountDown = () => setCount((count) => count - 1);
 
   useEffect(() => {
-    myAPI.update(count);
+    window.myAPI.update(count);
   }, [count]);
 
   return (
@@ -23,3 +23,9 @@ export const App = () => {
     </div>
   );
 };
+
+ReactDOM.createRoot(document.getElementById('root')!).render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);

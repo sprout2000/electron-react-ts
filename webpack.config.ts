@@ -54,7 +54,7 @@ const renderer: Configuration = {
   ...common,
   target: 'web',
   entry: {
-    app: './src/web/index.tsx',
+    app: './src/web/App.tsx',
   },
   plugins: [
     new MiniCssExtractPlugin(),
