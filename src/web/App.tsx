@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import ReactDOM from 'react-dom/client';
+import { useState } from 'react';
 
 import './App.css';
 
@@ -11,15 +10,9 @@ const App = () => {
   return (
     <div className="container">
       <h1>{count}</h1>
-      <div>
-        <button onClick={onCountUp}>Count</button>
-      </div>
+      <button onClick={onCountUp}>Count</button>
     </div>
   );
 };
 
-ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+export default App;
