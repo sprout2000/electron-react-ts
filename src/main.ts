@@ -16,16 +16,13 @@ if (isDev) {
 }
 
 app.whenReady().then(() => {
-  const mainWindow = new BrowserWindow();
+  new BrowserWindow().loadFile('dist/index.html');
 
   if (isDev) {
     searchDevtools('REACT').then((devtools) => {
       session.defaultSession.loadExtension(devtools, { allowFileAccess: true });
     });
-    mainWindow.webContents.openDevTools({ mode: 'detach' });
   }
-
-  mainWindow.loadFile('dist/index.html');
 });
 
 app.once('window-all-closed', () => app.quit());
