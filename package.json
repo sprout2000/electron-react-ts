@@ -27,7 +27,7 @@
     "electron": "^20.0.1",
     "electron-builder": "^23.3.3",
     "electron-reload": "^2.0.0-alpha.1",
-    "electron-search-devtools": "^1.8.5",
+    "electron-search-devtools": "^1.8.6",
     "html-webpack-plugin": "^5.5.0",
     "mini-css-extract-plugin": "^2.6.1",
     "npm-run-all": "^4.1.5",
