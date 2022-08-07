@@ -16,19 +16,9 @@ if (isDev) {
   });
 }
 
-// Create a new BrowerWindow on app launch event.
 app.whenReady().then(() => {
-  const mainWindow = new BrowserWindow({
-    webPreferences: {
-      preload: path.join(__dirname, 'preload.js'),
-    },
-  });
+  const mainWindow = new BrowserWindow();
 
-  ipcMain.on('update-title', (_e, arg) => {
-    mainWindow.setTitle(`Electron App: ${arg}`);
-  });
-
-  // Load the React Devtools extension and open devtools in a new window.
   if (isDev) {
     searchDevtools('REACT').then((devtools) => {
       session.defaultSession.loadExtension(devtools, { allowFileAccess: true });
@@ -36,9 +26,7 @@ app.whenReady().then(() => {
     mainWindow.webContents.openDevTools({ mode: 'detach' });
   }
 
-  // Load the renderer process.
   mainWindow.loadFile('dist/index.html');
 });
 
-// Exit the application when all windows are closed.
 app.once('window-all-closed', () => app.quit());
