@@ -1,6 +1,6 @@
 import path from 'path';
 import { searchDevtools } from 'electron-search-devtools';
-import { BrowserWindow, app, ipcMain, session } from 'electron';
+import { BrowserWindow, app, session } from 'electron';
 
 const isDev = process.env.NODE_ENV === 'development';
 
