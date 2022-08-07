@@ -4,7 +4,6 @@ import { BrowserWindow, app, ipcMain, session } from 'electron';
 
 const isDev = process.env.NODE_ENV === 'development';
 
-// In development mode, use electron-reload to hot reload.
 if (isDev) {
   require('electron-reload')(__dirname, {
     electron: path.resolve(
