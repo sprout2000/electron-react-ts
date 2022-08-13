@@ -1,4 +1,6 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
+import ReactDOM from 'react-dom/client';
+
 import './App.css';
 
 const App = () => {
@@ -12,4 +14,8 @@ const App = () => {
   );
 };
 
-export default App;
+ReactDOM.createRoot(document.getElementById('root')!).render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
