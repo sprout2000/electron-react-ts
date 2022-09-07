@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import ReactDOM from 'react-dom/client';
 
-import './App.css';
+import './index.css';
 
 const App = () => {
   const [count, setCount] = useState(0);
