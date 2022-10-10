@@ -12,6 +12,8 @@ if (isDev) {
         ? '../node_modules/electron/dist/electron.exe'
         : '../node_modules/.bin/electron'
     ),
+    forceHardReset: true,
+    hardResetMethod: 'exit',
   });
 }
 
