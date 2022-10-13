@@ -1,10 +1,7 @@
 import path from 'path';
-import { BrowserWindow, app, session } from 'electron';
-import { searchDevtools } from 'electron-search-devtools';
+import { BrowserWindow, app } from 'electron';
 
-const isDev = process.env.NODE_ENV === 'development';
-
-if (isDev) {
+if (process.env.NODE_ENV === 'development') {
   require('electron-reload')(__dirname, {
     electron: path.resolve(
       __dirname,
@@ -19,12 +16,6 @@ if (isDev) {
 
 app.whenReady().then(() => {
   new BrowserWindow().loadFile('dist/index.html');
-
-  if (isDev) {
-    searchDevtools('REACT').then((devtools) => {
-      session.defaultSession.loadExtension(devtools, { allowFileAccess: true });
-    });
-  }
 });
 
 app.once('window-all-closed', () => app.quit());
