@@ -21,5 +21,9 @@ build({
       target: ['default'],
       icon: 'assets/icon.icns',
     },
+    linux: {
+      target: ['AppImage'],
+      icon: 'assets/icon.icns',
+    },
   },
 });
