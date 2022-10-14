@@ -5,6 +5,7 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 const isDev = process.env.NODE_ENV === 'development';
 
 const common: Configuration = {
+  mode: isDev ? 'development' : 'production',
   externals: ['fsevents'],
   resolve: {
     extensions: ['.js', '.ts', '.jsx', '.tsx', '.json'],
