@@ -5,7 +5,6 @@
 
 An [Electron](https://www.electronjs.org/) boilerplate with hot reloading for [React](https://reactjs.org/) and [TypeScript](https://www.typescriptlang.org/).
 
-![GitHub](https://img.shields.io/github/license/sprout2000/electron-react-ts)
 ![GitHub last commit](https://img.shields.io/github/last-commit/sprout2000/electron-react-ts)
 ![GitHub package.json dependency version (dev dep on branch)](https://img.shields.io/github/package-json/dependency-version/sprout2000/electron-react-ts/dev/electron)
 ![GitHub package.json dependency version (prod)](https://img.shields.io/github/package-json/dependency-version/sprout2000/electron-react-ts/react)
