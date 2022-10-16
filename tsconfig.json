@@ -5,7 +5,7 @@
     "esModuleInterop": true,
     "moduleResolution": "Node",
     "lib": ["DOM", "ESNext"],
-    "jsx": "react-jsx",
+    "jsx": "react",
     "strict": true
   },
   "ts-node": {
