@@ -32,7 +32,7 @@ const common: Configuration = {
     ],
   },
   watch: isDev,
-  devtool: isDev ? 'inline-source-map' : undefined,
+  devtool: isDev ? 'source-map' : undefined,
 };
 
 const main: Configuration = {
@@ -57,4 +57,4 @@ const renderer: Configuration = {
   ],
 };
 
-export default isDev ? renderer : [main, preload, renderer];
+export default [main, preload, renderer];

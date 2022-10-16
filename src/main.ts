@@ -2,15 +2,9 @@ import path from 'path';
 import { BrowserWindow, app } from 'electron';
 
 if (process.env.NODE_ENV === 'development') {
-  require('electron-reload')(__dirname, {
-    electron: path.resolve(
-      __dirname,
-      process.platform === 'win32'
-        ? '../node_modules/electron/dist/electron.exe'
-        : '../node_modules/.bin/electron'
-    ),
-    forceHardReset: true,
-    hardResetMethod: 'exit',
+  require('electron-nice-auto-reload')({
+    rootPath: path.join(process.cwd(), 'src'),
+    rules: [{ action: 'app.relaunch' }],
   });
 }
 

@@ -6,12 +6,12 @@
   "main": "dist/main.js",
   "scripts": {
     "dev": "run-p dev:*",
-    "build": "cross-env NODE_ENV=\"production\" webpack --progress",
-    "package": "ts-node ./builder.ts",
-    "dev:tsc": "tsc -w -p tsconfig.node.json",
+    "build": "run-s dev:clean build:*",
+    "dev:clean": "rimraf dist",
     "dev:webpack": "cross-env NODE_ENV=\"development\" webpack --progress",
-    "dev:electron": "wait-on ./dist/index.html ./dist/main.js && cross-env NODE_ENV=\"development\" electron .",
-    "predev": "rimraf dist"
+    "dev:electron": "wait-on ./dist/index.html ./dist/main.js && electron .",
+    "build:electron": "cross-env NODE_ENV=\"production\" webpack --progress",
+    "build:builder": "ts-node ./builder.ts"
   },
   "dependencies": {
     "react": "^18.2.0",
@@ -25,7 +25,7 @@
     "css-loader": "^6.7.1",
     "electron": "^21.1.1",
     "electron-builder": "^23.6.0",
-    "electron-reload": "^2.0.0-alpha.1",
+    "electron-nice-auto-reload": "^1.3.0",
     "html-webpack-plugin": "^5.5.0",
     "mini-css-extract-plugin": "^2.6.1",
     "npm-run-all": "^4.1.5",
