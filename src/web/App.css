@@ -1,13 +1,4 @@
-body {
-  margin: 0;
-  font-family: sans-serif;
-}
-
 .container {
-  height: 100vh;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  font-family: sans-serif;
+  text-align: center;
 }
