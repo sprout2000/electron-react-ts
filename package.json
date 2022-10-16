@@ -1,5 +1,8 @@
 {
   "name": "electron-react-ts",
+  "version": "0.0.0",
+  "description": "Electron App",
+  "author": "",
   "main": "dist/main.js",
   "scripts": {
     "dev": "run-p dev:*",
