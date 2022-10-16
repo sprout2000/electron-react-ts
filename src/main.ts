@@ -3,7 +3,7 @@ import { BrowserWindow, app } from 'electron';
 
 if (process.env.NODE_ENV === 'development') {
   require('electron-nice-auto-reload')({
-    rootPath: path.join(process.cwd(), 'src'),
+    rootPath: path.join(process.cwd(), 'dist'),
     rules: [{ action: 'app.relaunch' }],
   });
 }
