@@ -14,6 +14,10 @@ build({
       icon: 'assets/icon.ico',
     },
     nsis: {
+      oneClick: false,
+      perMachine: false,
+      createDesktopShortcut: false,
+      createStartMenuShortcut: true,
       artifactName: '${productName}-${version}-installer.${ext}',
     },
     mac: {
