@@ -10,7 +10,12 @@
     "build": "cross-env NODE_ENV=\"production\" webpack --progress",
     "predev": "rimraf dist",
     "dev:webpack": "cross-env NODE_ENV=\"development\" webpack --progress",
-    "dev:electron": "wait-on ./dist/index.html ./dist/main.js && electron ."
+    "dev:electron": "wait-on ./dist/index.html ./dist/main.js && electronmon ."
+  },
+  "electronmon": {
+    "patterns": [
+      "dist/**/*"
+    ]
   },
   "dependencies": {
     "react": "^18.2.0",
@@ -20,10 +25,10 @@
     "@types/node": "^18.11.9",
     "@types/react": "^18.0.25",
     "@types/react-dom": "^18.0.8",
-    "chokidar": "^3.5.3",
     "cross-env": "^7.0.3",
     "css-loader": "^6.7.1",
     "electron": "^21.2.3",
+    "electronmon": "^2.0.2",
     "html-webpack-plugin": "^5.5.0",
     "mini-css-extract-plugin": "^2.6.1",
     "npm-run-all": "^4.1.5",
