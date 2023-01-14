@@ -38,22 +38,31 @@ const common: Configuration = {
 const main: Configuration = {
   ...common,
   target: 'electron-main',
-  entry: { main: './src/main.ts' },
+  entry: {
+    main: './src/main.ts',
+  },
 };
 
 const preload: Configuration = {
   ...common,
   target: 'electron-preload',
-  entry: { preload: './src/preload.ts' },
+  entry: {
+    preload: './src/preload.ts',
+  },
 };
 
 const renderer: Configuration = {
   ...common,
   target: 'web',
-  entry: { app: './src/web/index.tsx' },
+  entry: {
+    app: './src/web/index.tsx',
+  },
   plugins: [
     new MiniCssExtractPlugin(),
-    new HtmlWebpackPlugin({ template: './src/web/index.html' }),
+    new HtmlWebpackPlugin({
+      inject: 'body',
+      template: './src/web/index.html',
+    }),
   ],
 };
 
