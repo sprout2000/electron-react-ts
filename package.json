@@ -21,12 +21,12 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@types/node": "^18.11.18",
+    "@types/node": "^18.13.0",
     "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10",
     "cross-env": "^7.0.3",
     "css-loader": "^6.7.3",
-    "electron": "^22.2.0",
+    "electron": "^23.0.0",
     "electronmon": "^2.0.2",
     "html-webpack-plugin": "^5.5.0",
     "mini-css-extract-plugin": "^2.7.2",
