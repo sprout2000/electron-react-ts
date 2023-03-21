@@ -1,7 +1,7 @@
 # electron-react-ts
 
-<img src="https://user-images.githubusercontent.com/52094761/154874997-a6fea4fa-49da-46c6-9b54-6f0f0d4cf6d2.svg#gh-light-mode-only">
-<img src="https://user-images.githubusercontent.com/52094761/154875034-abe01e30-6a82-4e55-928e-c31d88c39b07.svg#gh-dark-mode-only">
+<img src="https://user-images.githubusercontent.com/52094761/226554131-16510c26-7faf-4bf0-b271-a00abf66d9b5.svg#gh-light-mode-only">
+<img src="https://user-images.githubusercontent.com/52094761/226554362-4a04fbd0-6918-47cd-abee-83c6c82a6877.svg#gh-dark-mode-only">
 
 An [Electron](https://www.electronjs.org/) boilerplate with hot reloading for [React](https://reactjs.org/) and [TypeScript](https://www.typescriptlang.org/).
 
