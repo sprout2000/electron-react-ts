@@ -32,13 +32,7 @@ _NOTE: You will need to have [Node.js](https://nodejs.org/) and [Git](https://gi
 
 The template provided by this scaffold is _NOT_ an all-in-one. It provides only the necessary and sufficient settings so that you can customize it as you like. In other words, it has no _"eject"_.
 
-## :camera_flash: Screen shots
-
-### Hot reload in renderer process
-
-<img width="800" src="https://user-images.githubusercontent.com/52094761/235551732-a69ba9d5-db95-4101-9b79-e2741f8050dc.gif" />
-
-### Hot reload in main process
+## :camera_flash: Screen shot
 
 <img width="800" src="https://user-images.githubusercontent.com/52094761/235551746-490c7b46-8d34-45a8-bd96-9afb0d37cb61.gif" />
 
