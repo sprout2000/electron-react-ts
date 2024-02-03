@@ -66,4 +66,4 @@ const renderer: Configuration = {
   ],
 };
 
-export default [main, preload, renderer];
+export default isDev ? renderer : [main, preload, renderer];
