@@ -13,21 +13,21 @@
     "dev:electron": "wait-on ./dist/index.html ./dist/main.js && cross-env NODE_ENV=\"development\" electron ."
   },
   "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
-    "@types/node": "^20.12.7",
-    "@types/react": "^18.2.77",
-    "@types/react-dom": "^18.2.25",
+    "@types/node": "^20.13.0",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
     "cross-env": "^7.0.3",
-    "css-loader": "^7.1.1",
-    "electron": "^29.3.0",
+    "css-loader": "^7.1.2",
+    "electron": "^30.0.9",
     "electron-reload": "^2.0.0-alpha.1",
     "html-webpack-plugin": "^5.6.0",
-    "mini-css-extract-plugin": "^2.8.1",
+    "mini-css-extract-plugin": "^2.9.0",
     "npm-run-all": "^4.1.5",
-    "rimraf": "^5.0.5",
+    "rimraf": "^5.0.7",
     "ts-loader": "^9.5.1",
     "ts-node": "^10.9.2",
     "typescript": "^5.4.5",
