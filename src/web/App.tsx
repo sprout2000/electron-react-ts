@@ -7,7 +7,9 @@ export const App = () => {
   return (
     <div className="container">
       <h1>{count}</h1>
-      <button onClick={() => setCount((count) => count + 1)}>Count</button>
+      <button type="button" onClick={() => setCount((count) => count + 1)}>
+        Count
+      </button>
     </div>
   );
 };
