@@ -75,7 +75,7 @@ And then run the script above...
 npx ts-node ./builder.ts
 ```
 
-See [Common Configuration](https://www.electron.build/configuration/configuration) for more details.
+See [Common Configuration](https://www.electron.build/configuration) for more details.
 
 ## :art: How to use sass (`*.scss`) in your project?
 
