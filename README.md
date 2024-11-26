@@ -13,7 +13,7 @@ An [Electron](https://www.electronjs.org/) boilerplate with hot reloading for [R
 ## :green_book: Usage
 
 ```sh
-$ git clone https://github.com/sprout2000/electron-react-ts.git
+$ git clone -b esbuild https://github.com/sprout2000/electron-react-ts.git
 $ cd electron-react-ts
 $ npm install
 
@@ -76,27 +76,6 @@ npx ts-node ./builder.ts
 ```
 
 See [Common Configuration](https://www.electron.build/configuration) for more details.
-
-## :art: How to use sass (`*.scss`) in your project?
-
-You will need to add [sass](https://www.npmjs.com/package/sass) and [sass-loader](https://www.npmjs.com/package/sass-loader):
-
-```sh
-npm install --save-dev sass sass-loader
-```
-
-And then, update your `webpack.config.ts`:
-
-```typescript
-  module: {
-    rules: [
-      {
-        test: /\.s?css$/,
-        use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
-      },
-    ],
-  },
-```
 
 ## :copyright: Copyright
 
