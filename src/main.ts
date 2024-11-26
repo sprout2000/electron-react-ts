@@ -9,7 +9,7 @@ app.whenReady().then(() => {
   });
 
   mainWindow.loadFile("dist/index.html");
-  // mainWindow.webContents.openDevTools({ mode: "detach" });
+  // if (DEBUG) mainWindow.webContents.openDevTools({ mode: "detach" });
 });
 
 app.once("window-all-closed", () => app.quit());

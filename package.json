@@ -1,42 +1,33 @@
 {
   "name": "electron-react-ts",
   "version": "0.0.0",
-  "description": "Electron App",
+  "description": "",
   "license": "",
   "author": "",
   "main": "dist/main.js",
   "scripts": {
-    "dev": "rimraf dist && run-p dev:webpack dev:electron",
-    "build": "rimraf dist && cross-env NODE_ENV=\"production\" webpack --progress",
-    "dev:webpack": "cross-env NODE_ENV=\"development\" webpack --progress",
-    "dev:electron": "wait-on ./dist/index.html ./dist/main.js && electronmon ."
-  },
-  "electronmon": {
-    "patterns": [
-      "dist/**/*"
-    ]
+    "dev": "rimraf dist && run-p dev:esbuild dev:electron",
+    "dev:esbuild": "cross-env NODE_ENV=\"development\" ts-node ./esbuild.ts",
+    "dev:electron": "wait-on dist/main.js dist/index.html && electronmon .",
+    "build": "tsc && cross-env NODE_ENV=\"production\" ts-node ./esbuild.ts"
   },
   "dependencies": {
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
+    "@craftamap/esbuild-plugin-html": "^0.8.0",
     "@types/node": "^22.9.1",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
     "cross-env": "^7.0.3",
-    "css-loader": "^7.1.2",
     "electron": "^33.2.0",
     "electronmon": "^2.0.3",
-    "html-webpack-plugin": "^5.6.3",
-    "mini-css-extract-plugin": "^2.9.2",
+    "esbuild": "^0.24.0",
     "npm-run-all": "^4.1.5",
     "rimraf": "^6.0.1",
-    "ts-loader": "^9.5.1",
     "ts-node": "^10.9.2",
     "typescript": "^5.6.3",
-    "wait-on": "^8.0.1",
-    "webpack": "^5.96.1",
-    "webpack-cli": "^5.1.4"
+    "wait-on": "^8.0.1"
   }
 }
