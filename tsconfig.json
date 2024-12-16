@@ -4,9 +4,14 @@
     "module": "ESNext",
     "esModuleInterop": true,
     "moduleResolution": "bundler",
+    "isolatedModules": true,
     "jsx": "react-jsx",
-    "strict": true
+    "strict": true,
+    "noEmit": true
   },
+  "include": [
+    "src"
+  ],
   "ts-node": {
     "compilerOptions": {
       "module": "CommonJS"
