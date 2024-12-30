@@ -4,6 +4,8 @@
     "module": "ESNext",
     "esModuleInterop": true,
     "moduleResolution": "bundler",
+    "isolatedModules": true,
+    "incremental": true,
     "jsx": "react-jsx",
     "strict": true
   },
