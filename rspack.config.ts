@@ -1,10 +1,5 @@
 import type { Configuration } from "@rspack/cli";
-import {
-  CssExtractRspackPlugin,
-  HtmlRspackPlugin,
-  ProgressPlugin,
-} from "@rspack/core";
-import { TsCheckerRspackPlugin } from "ts-checker-rspack-plugin";
+import { CssExtractRspackPlugin, HtmlRspackPlugin } from "@rspack/core";
 
 const isDev = process.env.NODE_ENV === "development";
 
@@ -48,10 +43,6 @@ const common: Configuration = {
       },
     ],
   },
-  plugins: [
-    new ProgressPlugin(),
-    new TsCheckerRspackPlugin({ typescript: { mode: "write-references" } }),
-  ],
   watch: isDev,
   devtool: isDev ? "source-map" : false,
 };
