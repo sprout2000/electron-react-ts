@@ -1,10 +1,10 @@
-import type { Configuration } from "webpack";
-import HtmlWebpackPlugin from "html-webpack-plugin";
-import MiniCssExtractPlugin from "mini-css-extract-plugin";
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 const isDev = process.env.NODE_ENV === "development";
 
-const common: Configuration = {
+/** @type import("webpack").Configuration */
+const common = {
   mode: isDev ? "development" : "production",
   externals: ["fsevents"],
   resolve: {
@@ -35,7 +35,8 @@ const common: Configuration = {
   devtool: isDev ? "source-map" : undefined,
 };
 
-const main: Configuration = {
+/** @type import("webpack").Configuration */
+const main = {
   ...common,
   target: "electron-main",
   entry: {
@@ -43,7 +44,8 @@ const main: Configuration = {
   },
 };
 
-const preload: Configuration = {
+/** @type import("webpack").Configuration */
+const preload = {
   ...common,
   target: "electron-preload",
   entry: {
@@ -51,7 +53,8 @@ const preload: Configuration = {
   },
 };
 
-const renderer: Configuration = {
+/** @type import("webpack").Configuration */
+const renderer = {
   ...common,
   target: "web",
   entry: {
@@ -66,4 +69,4 @@ const renderer: Configuration = {
   ],
 };
 
-export default [main, preload, renderer];
+module.exports = [main, preload, renderer];
