@@ -45,37 +45,11 @@ The template provided by this scaffold is _NOT_ an all-in-one. It provides only 
 
 ## :package: How to package your app to publish?
 
-It is recommended to use [electron-builder](https://www.electron.build/).
-
 ```sh
-npm install --save-dev electron-builder
+npm run build && npm run package
 ```
 
-Here's a sample script `builder.ts` for electron-builder:
-
-```typescript
-import { build } from "electron-builder";
-
-build({
-  config: {
-    appId: "com.example.MyApp",
-    productName: "My App",
-    artifactName: "${productName}-${version}-${platform}-${arch}.${ext}",
-    files: ["dist/**/*"],
-    directories: {
-      output: "release",
-    },
-  },
-});
-```
-
-And then run the script above...
-
-```sh
-npx ts-node ./builder.ts
-```
-
-See [Common Configuration](https://www.electron.build/configuration) for more details.
+And then, you will find the installer in the `release` directory.
 
 ## :art: How to use sass (`*.scss`) in your project?
 

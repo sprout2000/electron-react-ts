@@ -1,0 +1,32 @@
+{
+    "productName": "MyApp",
+    "artifactName": "${productName}-${version}-${platform}-${arch}.${ext}",
+    "directories": {
+      "output": "release",
+      "buildResources": "assets"
+    },
+    "files": ["dist/**/*"],
+    "linux": {
+      "syncDesktopName": true,
+      "target": ["AppImage", "deb"],
+      "icon": "assets/icon.icns"
+    },
+    "win": {
+      "target": ["nsis", "zip"],
+      "icon": "assets/icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "createDesktopShortcut": false,
+      "createStartMenuShortcut": true,
+      "artifactName":
+        "${productName}-${version}-${platform}-${arch}-installer.${ext}"
+    },
+    "mac": {
+      "appId": "com.example.myapp",
+      "target": ["dmg", "zip"],
+      "icon": "assets/icon.icns",
+      "identity": null
+    }
+}
