@@ -1,5 +1,8 @@
 import path from "node:path";
 import { BrowserWindow, app, ipcMain } from "electron";
+import { installExtension, REACT_DEVELOPER_TOOLS } from "electron-devtools-installer";
+
+const isDev = process.env.NODE_ENV === "development";
 
 app.whenReady().then(() => {
   const mainWindow = new BrowserWindow({
@@ -13,7 +16,11 @@ app.whenReady().then(() => {
   });
 
   mainWindow.loadFile("dist/index.html");
-  // mainWindow.webContents.openDevTools({ mode: "detach" });
+
+  if (isDev) {
+    installExtension(REACT_DEVELOPER_TOOLS, { loadExtensionOptions: { allowFileAccess: true } });
+    mainWindow.webContents.openDevTools({ mode: "detach" });
+  }
 });
 
 app.once("window-all-closed", () => app.quit());
