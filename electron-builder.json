@@ -16,6 +16,7 @@
     "icon": "assets/icon.ico"
   },
   "nsis": {
+    "icon": "assets/installer.ico",
     "oneClick": false,
     "perMachine": false,
     "createDesktopShortcut": false,
