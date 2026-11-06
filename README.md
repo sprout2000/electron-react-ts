@@ -68,7 +68,3 @@ And then, update your `webpack.config.js`:
     ],
   },
 ```
-
-## :copyright: Copyright
-
-Copyright (c) 2022 sprout2000
