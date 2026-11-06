@@ -19,6 +19,9 @@ $ npm install
 
 # on development
 $ npm run dev
+
+# on production
+$ npm run build
 ```
 
 _NOTE: You will need to have [Node.js](https://nodejs.org/) and [Git](https://git-scm.com/) installed._
@@ -39,14 +42,6 @@ The template provided by this scaffold is _NOT_ an all-in-one. It provides only 
 ### Hot reload in main process
 
 <img width="800" src="https://user-images.githubusercontent.com/52094761/235551746-490c7b46-8d34-45a8-bd96-9afb0d37cb61.gif" />
-
-## :package: How to package your app to publish?
-
-```sh
-npm run build && npm run package
-```
-
-And then, you will find the installer in the `release` directory.
 
 ## :art: How to use sass (`*.scss`) in your project?
 
