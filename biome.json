@@ -6,8 +6,7 @@
     "useIgnoreFile": true
   },
   "files": {
-    "ignoreUnknown": false,
-    "includes": ["src/**/*", "webpack.config.js"]
+    "ignoreUnknown": false
   },
   "formatter": {
     "enabled": true,
