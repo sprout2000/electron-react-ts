@@ -56,9 +56,9 @@ You will need to add [sass](https://www.npmjs.com/package/sass) and [sass-loader
 npm install --save-dev sass sass-loader
 ```
 
-And then, update your `webpack.config.ts`:
+And then, update your `webpack.config.js`:
 
-```typescript
+```javascript
   module: {
     rules: [
       {
