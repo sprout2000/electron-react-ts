@@ -1,5 +1,5 @@
 {
-  "productName": "MyApp",
+  "productName": "Electron App",
   "artifactName": "${productName}-${version}-${platform}-${arch}.${ext}",
   "directories": {
     "output": "release",
