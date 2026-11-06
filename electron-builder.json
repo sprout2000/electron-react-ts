@@ -23,7 +23,7 @@
     "artifactName": "${productName}-${version}-${platform}-${arch}-installer.${ext}"
   },
   "mac": {
-    "appId": "com.example.myapp",
+    "appId": "com.example.electronapp",
     "target": ["dmg", "zip"],
     "icon": "assets/icon.icns",
     "identity": null
