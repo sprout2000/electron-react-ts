@@ -13,7 +13,7 @@ An [Electron](https://www.electronjs.org/) boilerplate with hot reloading for [R
 ## :green_book: Usage
 
 ```sh
-$ git clone https://github.com/sprout2000/electron-react-ts.git
+$ git clone https://github.com/sprout2000/electron-react-ts.git -b minimal
 $ cd electron-react-ts
 $ npm install
 
